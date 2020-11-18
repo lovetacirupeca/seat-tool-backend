@@ -1,6 +1,6 @@
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
-const validator = require('swagger-endpoint-validator');
+// const validator = require('swagger-endpoint-validator');
 
 module.exports = () => {
 	const start = async ({ manifest = {}, app, config }) => {
@@ -8,7 +8,7 @@ module.exports = () => {
 		app.use(bodyParser.json());
 		app.use(helmet());
 
-		await validator.init(app, config.swaggerValidator);
+		// await validator.init(app, config.swaggerValidator);
 
 		app.get('/__/manifest', (req, res) => res.json(manifest));
 
