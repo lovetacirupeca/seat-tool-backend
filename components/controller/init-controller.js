@@ -2,8 +2,8 @@ module.exports = () => {
 	const start = async ({ app, config, store }) => {
 		const getCurrentDay = () => {
 			const seats = store.seats.get();
-			return seats;
-			// const booking = await store.booking.get();
+			const bookings = store.bookings.get();
+			return { seats, bookings };
 		};
 
 		return { getCurrentDay };
