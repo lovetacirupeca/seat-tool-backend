@@ -1,6 +1,6 @@
 const System = require('systemic');
 const adminRoutes = require('./admin-routes');
-const seatsRoutes = require('./seats-routes');
+const seatsRoutes = require('./api-routes');
 
 module.exports = new System({ name: 'routes' })
 	.add('routes.admin', adminRoutes())
