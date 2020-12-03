@@ -2,7 +2,7 @@ module.exports = () => {
 	const start = async ({ app, config }) => {
 		const get = date => [
 			{
-				seat: 4,
+				seat: 1,
 				user: 'menganato@gs.com',
 			},
 			{

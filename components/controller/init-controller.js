@@ -1,12 +1,22 @@
 module.exports = () => {
 	const start = async ({ app, config, store }) => {
-		const getCurrentDay = () => {
+		const getDay = () => {
 			const seats = store.seats.get();
 			const bookings = store.bookings.get();
-			return { seats, bookings };
+
+			const list = seats.map(s => {
+				const match = bookings.find(booking => booking.seat === s.id);
+				return {
+					user: match ? match.user : null,
+					seat: s.id,
+					status: match ? 'unavailable' : 'available',
+				};
+			});
+
+			return list;
 		};
 
-		return { getCurrentDay };
+		return { getDay };
 	};
 
 	return { start };
